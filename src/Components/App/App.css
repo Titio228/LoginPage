@@ -1,0 +1,190 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* .App {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #455a64;
+}
+* .App .fa-circle-half-stroke {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+* .App .box {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  border-radius: 8px;
+  background-color: #2d3436;
+  overflow: hidden;
+}
+* .App .box form {
+  position: absolute;
+  inset: 4px;
+  z-index: 2;
+  padding: 50px 40px;
+  border-radius: 8px;
+  background-color: #263238;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+* .App .box form h1 {
+  color: white;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+* .App .box form .inputBox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+* .App .box form .inputBox input {
+  position: relative;
+  padding: 20px 10px 10px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  z-index: 10;
+  letter-spacing: 0.1rem;
+  transition: 0.5s;
+  width: 100%;
+  cursor: pointer;
+}
+* .App .box form .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  pointer-events: none;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 0.1rem;
+  transition: 0.5s;
+}
+* .App .box form .inputBox input:valid ~ span,
+* .App .box form .inputBox input:focus ~ span {
+  color: white;
+  font-size: 0.8rem;
+  transform: translateY(-30px);
+}
+* .App .box form .inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  pointer-events: none;
+}
+* .App .box form .inputBox input:valid ~ i,
+* .App .box form .inputBox input:focus ~ i {
+  height: 30px;
+}
+* .App .box form .link {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+* .App .box form .link a {
+  text-align: center;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: gray;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+* .App .box form button {
+  border-radius: 5px;
+  line-height: 1.5rem;
+  background: linear-gradient(45deg, #b2bec3, #b2bec3, #d63031);
+  background-size: 125% 125%;
+  animation: button 5s infinite ease;
+  cursor: pointer;
+  color: gray;
+}
+* .App .box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, red, red, red);
+  transform-origin: bottom right;
+  z-index: 1;
+  animation: animate 6s linear infinite;
+}
+* .App .box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, red, red, red);
+  transform-origin: bottom right;
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+* .App .borderLine {
+  position: absolute;
+  top: 0;
+  inset: 0;
+}
+* .App .borderLine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, white, white, white);
+  transform-origin: bottom right;
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -1.5s;
+}
+* .App .borderLine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, white, white, white);
+  transform-origin: bottom right;
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -4.5s;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes button {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
